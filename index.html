@@ -1,11 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="./css/output.css" rel="stylesheet">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
   <title>Portfolio | YH</title>
 </head>
+
 <body>
-  
+  <nav class="fixed w-full z-20 top-0 start-0 bg-inkblue">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <span class="self-center text-xl text-heading font-semibold whitespace-nowrap text-white">YH</span>
+      </a>
+      <button id="burger-btn" data-collapse-toggle="navbar-default" type="button"
+        class="text-white inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-base md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-neutral-tertiary"
+        aria-controls="navbar">
+        <span class="sr-only">Open main menu</span>
+        <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
+          viewBox="0 0 24 24">
+          <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto text-white" id="navbar">
+        <ul
+          class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-neutral-primary">
+          <li>
+            <a href="#home"
+              class="block py-2 px-3 text-gray-400 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">
+              Home
+            </a>
+          </li>
+          <li>
+            <a href="#projects"
+              class="block py-2 px-3 text-gray-400 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">
+              Projects
+            </a>
+          </li>
+          <li>
+            <a href="#services"
+              class="block py-2 px-3 text-gray-400 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#skills"
+              class="block py-2 px-3 text-gray-400 bg-brand rounded md:bg-transparent md:text-fg-brand md:p-0">
+              Skills
+            </a>
+          </li>
+          <li class="mt-10 lg:mt-0 md:mt-0">
+            <a href="#contact"
+              class="px-7 py-3.5 text-sm font-bold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:from-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/40">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-inkblue" id="home">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div
+        class="absolute w-96 h-96 md:w-[600px] md:h-[600px] -top-48 -left-48 bg-purple-600/30 rounded-full blur-3xl animate-pulse">
+      </div>
+      <div
+        class="absolute w-96 h-96 md:w-[600px] md:h-[600px] -bottom-48 -right-48 bg-blue-600/30 rounded-full blur-3xl animate-pulse animation-delay-2000">
+      </div>
+      <div
+        class="absolute w-[500px] h-[500px] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-600/20 rounded-full blur-3xl animate-ping">
+      </div>
+      <div class="absolute w-80 h-80 top-20 right-10 bg-cyan-500/20 rounded-full blur-3xl animate-float"></div>
+      <div
+        class="absolute w-72 h-72 bottom-32 left-20 bg-emerald-500/15 rounded-full blur-3xl animate-float animation-delay-4000">
+      </div>
+    </div>
+
+    <div class="relative z-10 max-w-screen-xl mx-auto px-6 text-center">
+      <h1 class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight">
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500">
+          Hi, I'm Yahan
+        </span>
+      </h1>
+
+      <div class="mt-6 h-16 md:h-20">
+        <p
+          class="text-3xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400">
+          Full-Stack Developer
+        </p>
+      </div>
+
+      <p class="mt-10 max-w-4xl mx-auto text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed">
+        I build modern, fast, and beautiful web applications using <span
+          class="text-purple-400 font-semibold">React</span>,
+        <span class="text-pink-400 font-semibold">Laravel</span>, and <span
+          class="text-emerald-400 font-semibold">Tailwind CSS</span>.
+        Passionate about bringing ideas to life.
+      </p>
+
+      <div class="mt-12 flex flex-col sm:flex-row gap-6 justify-center items-center">
+        <a href="#projects"
+          class="px-10 py-5 text-lg md:text-xl font-bold text-white bg-gradient-to-r from-purple-600 to-pink-600 rounded-xl hover:from-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-300 shadow-2xl hover:shadow-purple-500/50">
+          Explore My Work
+        </a>
+        <a href="#contact"
+          class="px-10 py-5 text-lg md:text-xl font-bold text-purple-400 border-2 border-purple-500 rounded-xl hover:bg-purple-500/10 backdrop-blur-sm transform hover:scale-105 transition-all duration-300">
+          Get In Touch
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-inkblue" id="projects">
+    <div class="flex flex-col items-center justify-center text-center px-6">
+      <h1
+        class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-4">
+        Featured Projects
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl">
+        Here are some of my recent works built from the ground up with passion and precision.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mt-16 px-6">
+      <div
+        class="group relative bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden hover:border-gray-500 transition-all duration-500 hover:-translate-y-3">
+        <div class="relative overflow-hidden">
+          <img src="./images/project1.png" alt="Project screenshot"
+            class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+        </div>
+
+        <div class="p-7">
+          <h3 class="text-2xl font-bold text-white mb-3">Merit/demerit website</h3>
+          <p class="text-gray-400 mb-5 leading-relaxed">
+            Full stack merit/demerit website designed for schools to track and edit the merit point of students.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-400 rounded-full">React</span>
+            <span
+              class="px-3 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-400 rounded-full">TypeScript</span>
+            <span class="px-3 py-1 text-xs font-medium bg-purple-500/20 text-purple-400 rounded-full">Laravel</span>
+            <span class="px-3 py-1 text-xs font-medium bg-pink-500/20 text-pink-400 rounded-full">Tailwind</span>
+            <span class="px-3 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-400 rounded-full">Mysql</span>
+          </div>
+
+          <div class="flex space-x-4">
+            <a href="https://merit-point-management-system.netlify.app"
+              class="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium py-3 rounded-lg text-center hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300" target="_blank">
+              Live Demo
+            </a>
+            <a href="https://github.com/yh-yahan/merit-points-management-system"
+              class="flex-1 border border-gray-600 text-gray-300 font-medium py-3 rounded-lg text-center hover:bg-gray-800 hover:border-gray-500 transition-all duration-300" target="_blank">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group relative bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden hover:border-gray-500 transition-all duration-500 hover:-translate-y-3">
+        <div class="relative overflow-hidden">
+          <img src="./images/comingsoon.png" alt="Project screenshot"
+            class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+        </div>
+
+        <div class="p-7">
+          <h3 class="text-2xl font-bold text-white mb-3">Perfin</h3>
+          <p class="text-gray-400 mb-5 leading-relaxed">
+            Personal finance management website with budgets, savings, income and expense tracking.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 text-xs font-medium bg-cyan-500/20 text-cyan-400 rounded-full">React</span>
+            <span class="px-3 py-1 text-xs font-medium bg-yellow-500/20 text-yellow-400 rounded-full">Typescript</span>
+            <span class="px-3 py-1 text-xs font-medium bg-green-500/20 text-green-400 rounded-full">Tailwind</span>
+            <span class="px-3 py-1 text-xs font-medium bg-purple-500/20 text-purple-400 rounded-full">Laravel</span>
+            <span class="px-3 py-1 text-xs font-medium bg-red-500/20 text-red-400 rounded-full">Mysql</span>
+          </div>
+
+          <div class="flex space-x-4">
+            <a href="#"
+              class="flex-1 bg-gradient-to-r from-purple-500 to-pink-600 text-white font-medium py-3 rounded-lg text-center hover:shadow-lg hover:shadow-pink-500/25 transition-all duration-300">
+              Live Demo
+            </a>
+            <a href="#"
+              class="flex-1 border border-gray-600 text-gray-300 font-medium py-3 rounded-lg text-center hover:bg-gray-800 hover:border-gray-500 transition-all duration-300">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="group relative bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl overflow-hidden hover:border-gray-500 transition-all duration-500 hover:-translate-y-3">
+        <div class="relative overflow-hidden">
+          <img src="./images/comingsoon.png" alt="Project screenshot"
+            class="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-700">
+          <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
+        </div>
+
+        <div class="p-7">
+          <h3 class="text-2xl font-bold text-white mb-3">Lura</h3>
+          <p class="text-gray-400 mb-5 leading-relaxed">
+            A website and mobile app for learning new English words effortlessly with built-in search, flashcards, and
+            quick mini-tests that help you remember faster.
+          </p>
+
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="px-3 py-1 text-xs font-medium bg-blue-500/20 text-blue-400 rounded-full">React</span>
+            <span
+              class="px-3 py-1 text-xs font-medium bg-emerald-500/20 text-emerald-400 rounded-full">TypeScript</span>
+            <span class="px-3 py-1 text-xs font-medium bg-purple-500/20 text-purple-400 rounded-full">React
+              native</span>
+            <span class="px-3 py-1 text-xs font-medium bg-pink-500/20 text-pink-400 rounded-full">Tailwind</span>
+          </div>
+
+          <div class="flex space-x-4">
+            <a href="#"
+              class="flex-1 bg-gradient-to-r from-blue-500 to-purple-600 text-white font-medium py-3 rounded-lg text-center hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-300">
+              Live Demo
+            </a>
+            <a href="#"
+              class="flex-1 border border-gray-600 text-gray-300 font-medium py-3 rounded-lg text-center hover:bg-gray-800 hover:border-gray-500 transition-all duration-300">
+              GitHub
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="flex flex-col items-center justify-center py-20 bg-inkblue" id="services">
+    <div class="text-center mb-16 px-4">
+      <h1
+        class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-4">
+        Services I Offer
+      </h1>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+        End-to-end web solutions built with modern tech and pixel-perfect design.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full px-6">
+      <div
+        class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/80 hover:border-gray-600 transition-all duration-400">
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-4">Frontend Development</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Stunning, responsive UIs with React, Tailwind CSS, and modern animations.
+        </p>
+      </div>
+
+      <div
+        class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/80 hover:border-gray-600 transition-all duration-400">
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M5 12h14M5 12a8 8 0 018-8v8m0 0a8 8 0 018 8v-8" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-4">Backend Development</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Secure, scalable APIs & servers using Laravel.
+        </p>
+      </div>
+
+      <div
+        class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/80 hover:border-gray-600 transition-all duration-400">
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-pink-500 to-rose-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2m-6 0h6" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-4">Full-Stack Apps</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Complete web apps from database to deployment — React, Tailwind css, Bootstrap, Laravel and Mysql.
+        </p>
+      </div>
+
+      <!-- <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/80 hover:border-gray-600 transition-all duration-400">
+      <div class="w-16 h-16 bg-gradient-to-br from-emerald-500 to-teal-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+        <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485a2 2 0 01-1.414.586H7" />
+        </svg>
+      </div>
+      <h3 class="text-2xl font-semibold text-white mb-4">UI/UX Design</h3>
+      <p class="text-gray-400 leading-relaxed">
+        Modern, intuitive designs crafted in Figma — from wireframes to interactive prototypes.
+      </p>
+    </div> -->
+
+      <!-- <div class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/80 hover:border-gray-600 transition-all duration-400">
+      <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-red-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+        <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+        </svg>
+      </div>
+      <h3 class="text-2xl font-semibold text-white mb-4">Performance & SEO</h3>
+      <p class="text-gray-400 leading-relaxed">
+        Lightning-fast load times, perfect Lighthouse scores, and SEO-ready markup.
+      </p>
+    </div> -->
+
+      <div
+        class="group bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-2xl p-8 hover:bg-gray-800/80 hover:border-gray-600 transition-all duration-400">
+        <div
+          class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg">
+          <svg class="w-9 h-9 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M3 15a4 4 0 004 4h10a4 4 0 004-4V9a4 4 0 00-4-4H7a4 4 0 00-4 4v6z" />
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v-3m-3 3v-3m6 3v-3" />
+          </svg>
+        </div>
+        <h3 class="text-2xl font-semibold text-white mb-4">Deployment & Support</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Deployed on Vercel, Netlify, Render, or cloud platforms with ongoing maintenance.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-24 bg-inkblue" id="skills">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+      <h1
+        class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6">
+        Skills & Technologies
+      </h1>
+      <p class="text-gray-400 text-lg mb-16 max-w-2xl mx-auto">
+        Tools and technologies I use daily to build modern, fast, and beautiful web experiences.
+      </p>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-purple-glow transition-all duration-500 hover:-translate-y-4 hover:border-purple-500/50">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"
+              class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">HTML5</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-blue-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3"
+              class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">CSS3</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-yellow-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+              alt="JavaScript" class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">JavaScript</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-cyan-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg"
+              alt="TypeScript" class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">TypeScript</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-sky-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"
+              class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">React</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+              alt="Tailwind" class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">Tailwind</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-emerald-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+              alt="Bootstrap" class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">Bootstrap</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-teal-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/laravel/laravel-original.svg"
+              alt="Laravel" class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">Laravel</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-purple-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+              alt="Mysql" class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">Mysql</p>
+          </div>
+        </div>
+
+        <div class="group">
+          <div
+            class="bg-gray-800/50 backdrop-blur-md border border-gray-700 rounded-2xl p-8 hover:border-red-500/50 transition-all duration-500 hover:-translate-y-4">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"
+              class="w-16 h-16 mx-auto mb-4 group-hover:scale-110 transition-transform" />
+            <p class="text-gray-300 font-medium">Git</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="relative py-24 overflow-hidden bg-inkblue" id="contact">
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute w-96 h-96 -top-48 -left-48 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+      <div
+        class="absolute w-96 h-96 -bottom-48 -right-48 bg-blue-600/20 rounded-full blur-3xl animate-pulse delay-1000">
+      </div>
+      <div
+        class="absolute w-80 h-80 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-pink-600/10 rounded-full blur-3xl animate-ping">
+      </div>
+      <div class="absolute w-72 h-72 top-1/4 right-10 bg-cyan-500/15 rounded-full blur-3xl animate-float"></div>
+    </div>
+
+    <div class="relative max-w-7xl mx-auto px-6 text-center">
+      <h1
+        class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 mb-6">
+        Get In Touch
+      </h1>
+      <p class="text-gray-400 text-lg mb-16 max-w-2xl mx-auto">
+        Have a project in mind? Let's build something amazing together.
+      </p>
+
+      <div class="grid lg:grid-cols-3 gap-12 items-start">
+        <div class="lg:col-span-2">
+          <div class="bg-gray-800/40 backdrop-blur-xl border border-gray-700 rounded-3xl p-8 lg:p-10 shadow-2xl">
+            <form id="contact-form" class="space-y-7">
+              <input type="text" name="name" placeholder="Name" required
+                class="w-full px-6 py-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300">
+
+              <input type="email" name="_replyto" placeholder="Email" required
+                class="w-full px-6 py-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300">
+
+              <input type="text" name="subject" placeholder="Subject" required
+                class="w-full px-6 py-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300">
+
+              <textarea name="message" rows="6" placeholder="Message" required
+                class="w-full px-6 py-4 bg-gray-900/50 border border-gray-600 rounded-xl text-white placeholder-gray-500 focus:outline-none focus:border-purple-500 focus:ring-4 focus:ring-purple-500/20 transition-all duration-300 resize-none"></textarea>
+
+              <button type="submit"
+                class="w-full py-5 font-bold text-lg text-white rounded-xl bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 hover:from-blue-500 hover:via-purple-500 hover:to-pink-500 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-purple-500/50">
+                Send Message
+              </button>
+            </form>
+            <div id="status" class="mt-6 text-center text-lg font-medium"></div>
+          </div>
+        </div>
+
+        <div class="flex flex-col justify-center space-y-10 text-left">
+          <div>
+            <h3 class="text-2xl font-bold text-white mb-6">Let's connect</h3>
+            <p class="text-gray-400 leading-relaxed mb-8">
+              I'm currently open for freelance work and exciting opportunities.<br>
+              Feel free to reach out!
+            </p>
+
+            <div class="space-y-5">
+              <a href="mailto:yahanyang46@outlook.com"
+                class="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors">
+                <div
+                  class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path
+                      d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
+                  </svg>
+                </div>
+                <span class="break-all">yahanyang46@outlook.com</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="flex gap-6 mt-10">
+            <a href="https://github.com/yh-yahan" target="_blank" class="group">
+              <div
+                class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center group-hover:border-purple-500 group-hover:bg-purple-500/10 transition-all duration-300">
+                <svg class="w-7 h-7 text-gray-400 group-hover:text-purple-400 transition-colors" fill="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="https://www.linkedin.com/in/yang-yahan-1b290a399/" target="_blank" class="group">
+              <div
+                class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center group-hover:border-blue-500 group-hover:bg-blue-500/10 transition-all duration-300">
+                <svg class="w-7 h-7 text-gray-400 group-hover:text-blue-400 transition-colors" fill="currentColor"
+                  viewBox="0 0 24 24">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+              </div>
+            </a>
+
+            <a href="https://x.com/yh_yahan" target="_blank" class="group">
+              <div
+                class="w-14 h-14 bg-gray-800 border border-gray-700 rounded-xl flex items-center justify-center group-hover:border-cyan-500 group-hover:bg-cyan-500/10 transition-all duration-300">
+                <svg class="w-7 h-7 text-gray-400 group-hover:text-cyan-400 transition-colors" viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <text x="12" y="18" font-family="serif" font-size="24" font-weight="bold" text-anchor="middle"
+                    dominant-baseline="middle" fill="currentColor">X</text>
+                </svg>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="./scripts/script.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script>
+    document.documentElement.classList.add('bg-inkblue');
+    ScrollReveal().reveal('#home, #projects h1, #services h1, #skills h1, #contact h1', {
+      origin: 'top',
+      interval: 200
+    });
+
+    ScrollReveal().reveal('#projects .group', {
+      origin: 'bottom',
+      interval: 300,
+      delay: 200
+    });
+
+    ScrollReveal().reveal('#services .group', {
+      origin: 'bottom',
+      interval: 200
+    });
+
+    ScrollReveal().reveal('#skills .group', {
+      origin: 'bottom',
+      interval: 100
+    });
+
+    ScrollReveal().reveal('#contact form, #contact .flex-col', {
+      origin: 'left',
+      delay: 300
+    });
+  </script>
 </body>
+
 </html>
